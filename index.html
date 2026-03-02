@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CATA Community Resource Hub</title>
+  <meta
+    name="description"
+    content="CATA Community Resource Hub – a centralized directory of local non-profits, support services, and community programs."
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" aria-label="Main navigation">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-badge">CATA</span>
+        <span class="brand-text">Community Care Hub</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#suggest" class="nav-cta">Suggest a Resource</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero reveal">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>CATA Community Resource Hub</h1>
+          <p>
+            A centralized, student-built guide to food assistance, housing support,
+            youth programs, health services, and more for residents of the
+            CATA Community.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-scroll-target="#resources">
+              Explore Resources
+            </button>
+            <button class="btn btn-outline" data-scroll-target="#suggest">
+              Suggest a New Resource
+            </button>
+          </div>
+          <p class="hero-note">
+            Created by the <strong>CATA TSA Chapter</strong> to connect neighbors with
+            the support they deserve.
+          </p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <div class="hero-card-header">This Week at a Glance</div>
+            <ul class="hero-card-list">
+              <li>🍎 Food pantry open Saturday 10am–1pm</li>
+              <li>🧠 Free mental health workshop on Thursday</li>
+              <li>🎨 Youth art night at the community center</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section id="how" class="section section-alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>How to Use This Hub</h2>
+          <p>Three simple steps to find what you need.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-icon">🔍</div>
+            <h3>Search &amp; Filter</h3>
+            <p>
+              Use the search bar and category filters in the resource hub to quickly
+              find services that match your needs.
+            </p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">📅</div>
+            <h3>Check Events</h3>
+            <p>
+              Browse upcoming events and programs such as workshops, clinics, and
+              youth activities in the Events section.
+            </p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">🤝</div>
+            <h3>Contribute</h3>
+            <p>
+              Know a great local resource? Submit it using the Suggest a Resource form
+              so we can add it to the community directory.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resource Directory -->
+    <section id="resources" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Community Resource Directory</h2>
+          <p>
+            Search and filter to discover food banks, housing support, health services,
+            youth programs, senior services, and more.
+          </p>
+        </div>
+
+        <div class="filters" aria-label="Resource filters">
+          <div class="filter-group">
+            <label for="searchInput" class="filter-label">Search resources</label>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search by name, category, or keyword..."
+              aria-label="Search community resources"
+            />
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Category</span>
+            <div id="categoryFilters" class="pill-group" role="radiogroup" aria-label="Filter by category">
+              <!-- Category buttons injected by script.js -->
+            </div>
+          </div>
+
+          <div class="filter-group filter-inline">
+            <label class="checkbox-label">
+              <input type="checkbox" id="freeToggle" />
+              <span>Show only free / low-cost services</span>
+            </label>
+          </div>
+        </div>
+
+        <div id="resourceList" class="resource-grid" aria-live="polite">
+          <!-- Resource cards injected by script.js -->
+        </div>
+        <p id="noResults" class="no-results" hidden>
+          No resources match your search. Try adjusting your filters or searching with a different keyword.
+        </p>
+      </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section id="highlights" class="section section-alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Community Supports</h2>
+          <p>
+            A closer look at a few key organizations making a big impact in our community.
+          </p>
+        </div>
+        <div id="highlightsList" class="highlight-grid">
+          <!-- Highlight cards injected by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Upcoming Events &amp; Programs</h2>
+          <p>Stay up to date with what’s happening around the community.</p>
+        </div>
+        <div id="eventsList" class="events-grid">
+          <!-- Events injected by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section section-alt reveal">
+      <div class="container about-layout">
+        <div>
+          <h2>About the CATA Community &amp; TSA Chapter</h2>
+          <p>
+            The CATA Community Resource Hub is a student-led project created by the
+            <strong>Central Academy of Technology &amp; Arts TSA Chapter</strong>. Our goal is to
+            connect residents with reliable, local support in one easy-to-use website.
+          </p>
+          <p>
+            This site is updated as new resources and programs become available. While the
+            information is curated by students, we work closely with local organizations to
+            keep listings accurate and helpful.
+          </p>
+          <p>
+            If you represent an organization in the CATA area, we invite you to submit your
+            service using the form below so we can share it with our neighbors.
+          </p>
+        </div>
+        <div class="about-card" aria-hidden="true">
+          <h3>Our Focus</h3>
+          <ul>
+            <li>✅ Accessible information for all residents</li>
+            <li>✅ Spotlighting local non-profits and support services</li>
+            <li>✅ Youth-led community engagement</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Answers to common questions about the CATA Community Resource Hub.</p>
+        </div>
+        <div id="faqList" class="faq-list" aria-label="Frequently asked questions">
+          <!-- FAQ items injected by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Suggest a Resource Section -->
+    <section id="suggest" class="section section-alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Suggest a New Community Resource</h2>
+          <p>
+            Know a local service that should be listed here? Share the details and our team
+            will review it for inclusion in the directory.
+          </p>
+        </div>
+
+        <div class="suggest-layout">
+          <form id="suggestForm" class="form-card" novalidate>
+            <div class="form-field">
+              <label for="resourceName">Resource Name<span aria-hidden="true">*</span></label>
+              <input id="resourceName" name="resourceName" type="text" required />
+              <p class="field-error" data-error-for="resourceName"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="resourceCategory">Category<span aria-hidden="true">*</span></label>
+              <select id="resourceCategory" name="resourceCategory" required>
+                <option value="">Select a category</option>
+                <!-- Options populated dynamically based on categories -->
+              </select>
+              <p class="field-error" data-error-for="resourceCategory"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="resourceDescription">Description<span aria-hidden="true">*</span></label>
+              <textarea
+                id="resourceDescription"
+                name="resourceDescription"
+                rows="4"
+                required
+              ></textarea>
+              <p class="field-error" data-error-for="resourceDescription"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="resourceAddress">Address / Service Area</label>
+              <input id="resourceAddress" name="resourceAddress" type="text" />
+            </div>
+
+            <div class="form-field">
+              <label for="resourceContact">Contact Email or Phone</label>
+              <input id="resourceContact" name="resourceContact" type="text" />
+              <p class="field-error" data-error-for="resourceContact"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="resourceWebsite">Website URL</label>
+              <input id="resourceWebsite" name="resourceWebsite" type="url" />
+              <p class="field-error" data-error-for="resourceWebsite"></p>
+            </div>
+
+            <button type="submit" class="btn btn-primary full-width">
+              Submit Resource Suggestion
+            </button>
+
+            <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="pending-card">
+            <h3>Pending Suggestions (this session)</h3>
+            <p class="pending-note">
+              These entries are stored only in your browser for demonstration purposes.
+            </p>
+            <ul id="pendingList" class="pending-list">
+              <!-- Pending suggestions appended here -->
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-title">CATA Community Resource Hub</p>
+        <p class="footer-text">
+          A Technology Student Association project by the Central Academy of Technology &amp; Arts.
+        </p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <p class="footer-heading">Contact</p>
+          <p class="footer-text">
+            Email: <a href="mailto:communityhub@example-school.org">communityhub@example-school.org</a>
+          </p>
+          <p class="footer-text">Phone: (555) 555-0137</p>
+        </div>
+        <div class="footer-column">
+          <p class="footer-heading">Connect</p>
+          <ul class="footer-links">
+            <li><a href="#hero">Back to top</a></li>
+            <li><a href="#suggest">Suggest a resource</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> CATA TSA Chapter. For educational and informational purposes only.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
